@@ -13,7 +13,7 @@ end
 if not lang then
    return '_Group is already added_'
 else
-return 'گروه در لیست گروه های مدیریتی ربات هم اکنون موجود است'
+return '⚔ آماده پشتیبانی از مردم این قلمرو هستم ⚔'
   end
 end
         -- create data array in moderation.json
@@ -61,7 +61,7 @@ end
     if not lang then
   return '*Group has been added*'
 else
-  return 'گروه با موفقیت به لیست گروه های مدیریتی ربات افزوده شد'
+  return '💀 im G O D of WAR and ready  gladiator @Erfan_herkuless_051 💀'
 end
 end
 
@@ -251,7 +251,7 @@ administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] = user_name
    if not lang then
   return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is now the_ *group owner*", 0, "md")
    else
-  return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *به مقام صاحب گروه منتصب شد*", 0, "md")
+  return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *به درجه گلادیاتوری رسید🎖*", 0, "md")
    end
 end
 tdcli_function ({
@@ -2875,8 +2875,8 @@ if not lang then
 text = [[
 🔰*Bot Commands:*🔰
 
-در حال حاضر زبان ربات انگلیسی میباشد برای تغییر زبان دستور زیر را ارسال کنید
-*!setlang fa*
+در حال حاضر زبان ربات انگلیسی میباشد برای تغییر زبان دستور زیر را ارسال کنید @Erfan_herkuless_051
+*!setlang fa* 
 
 👑*!setowner* `[username|id|reply]` 
 _Set Group Owner(Multi Owner)_
@@ -3016,7 +3016,7 @@ text = [[
 #ممنوع
 
 👽آگاهی از آنلاین بودن ربات
-#انلاینی
+ping
 
 ➖➖➖➖➖
 در حال حاضر زبان ربات فارسی میباشد برای تغییر زبان دستور زیر را ارسال کنید
@@ -3265,9 +3265,8 @@ text4 = [[
 return text4
 end
 
-if matches[1] == "انلاینی" and is_mod(msg) then
 text5 = [[
-😎آنلاینم عزیز و حواسم به گروه هست 
+⚔  در این قلمرو نظاره گریم  ⚔ 
 ]]
 return text5 
 end
@@ -3338,7 +3337,7 @@ local lang = redis:get(hash)
      if not lang then
      welcome = "*Welcome Dude*"
     elseif lang then
-     welcome = "_خوش آمدید_"
+     welcome = "_☠ خوش  آمدی گلادیاتور ☠_"
         end
      end
  if administration[tostring(arg.chat_id)]['rules'] then
@@ -3388,7 +3387,7 @@ end
 return {
 patterns ={
 "^[!/#](مدیریت)$",
-"^[!/#](انلاینی)$",
+"^([Pp]ing)$",
 "^[!/#](ممنوع)$",
 "^[!/#](قفل)$",
 "^[!/#](id)$",
