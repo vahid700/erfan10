@@ -3265,6 +3265,7 @@ text4 = [[
 return text4
 end
 
+if matches[1] == "[Pp]ing" and is_mod(msg) then
 text5 = [[
 ⚔  در این قلمرو نظاره گریم  ⚔ 
 ]]
