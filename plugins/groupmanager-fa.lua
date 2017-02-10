@@ -1050,7 +1050,7 @@ data[tostring(target)]["settings"]["flood"] = "no" save_data(_config.moderation.
 if not lang then
 return "🔓*Flooding* _Has Been Unlocked_🔓" 
 else
-return "🔓ارسال پیام مکرر در گروه آزاد شد🔓"
+return "❗️ارسال پیام مکرر در قلمرو آزاد شد❗️"
 end
 end
 end
@@ -1438,7 +1438,7 @@ if mute_all == "yes" then
 if not lang then
 return "🔇*Mute All* _Is Already Enabled_🔇" 
 elseif lang then
-return "🔇بیصدا کردن همه فعال است🔇"
+return "😶بیصدا کردن همه فعال است😶"
 end
 else 
 data[tostring(target)]["settings"]["mute_all"] = "yes"
@@ -1613,7 +1613,7 @@ if mute_inline == "yes" then
 if not lang then
  return "🔇*Mute Inline* _Is Already Enabled_🔇"
 elseif lang then
- return "🔇بیصدا کردن کیبورد شیشه ای فعال است🔇"
+ return "☑️ممنوعیت کیبورد شیشه ای فعال است☑️"
 end
 else
  data[tostring(target)]["settings"]["mute_inline"] = "yes" 
@@ -1621,7 +1621,7 @@ save_data(_config.moderation.data, data)
 if not lang then
  return "🔇*Mute Inline* _Has Been Enabled_🔇"
 else
- return "🔇بیصدا کردن کیبورد شیشه ای فعال شد🔇"
+ return "☑️ممنوعیت کیبورد شیشه ای فعال شد☑️"
 end
 end
 end
@@ -1642,7 +1642,7 @@ local mute_inline = data[tostring(target)]["settings"]["mute_inline"]
 if not lang then
 return "🔊*Mute Inline* _Is Already Disabled_🔊" 
 elseif lang then
-return "🔊بیصدا کردن کیبورد شیشه ای غیر فعال است🔊"
+return "❗️ممنوعیت کیبورد شیشه ای غیر فعال است❗️"
 end
 else 
 data[tostring(target)]["settings"]["mute_inline"] = "no"
@@ -1650,7 +1650,7 @@ data[tostring(target)]["settings"]["mute_inline"] = "no"
 if not lang then
 return "🔊*Mute Inline* _Has Been Disabled_🔊" 
 else
-return "🔊بیصدا کردن کیبورد شیشه ای غیر فعال شد🔊"
+return "❗️ممنوعیت کیبورد شیشه ای غیر فعال شد❗️"
 end
 end
 end
@@ -2300,7 +2300,7 @@ local lang = redis:get(hash)
     local data = load_data(_config.moderation.data)
    local chat = msg.chat_id_
    local user = msg.sender_user_id_
-if matches[1] == "id" then
+if matches[1] == "ایدی" then
 if not matches[2] and tonumber(msg.reply_to_message_id_) == 0 then
    if not lang then
 return "*Chat ID :* _"..chat.."_\n*User ID :* _"..user.."_"
@@ -2322,7 +2322,7 @@ if matches[2] and tonumber(msg.reply_to_message_id_) == 0 then
     }, action_by_username, {chat_id=msg.chat_id_,username=matches[2],cmd="id"})
       end
    end
-if matches[1] == "pin" and is_owner(msg) then
+if matches[1] == "سنجاق کردن" and is_owner(msg) then
 tdcli.pinChannelMessage(msg.chat_id_, msg.reply_to_message_id_, 1)
 if not lang then
 return "*Message Has Been Pinned*"
@@ -2330,7 +2330,7 @@ else
 return "پیام سجاق شد"
 end
 end
-if matches[1] == 'unpin' and is_mod(msg) then
+if matches[1] == 'حذف سنجاق' and is_mod(msg) then
 tdcli.unpinChannelMessage(msg.chat_id_)
 if not lang then
 return "*Pin message has been unpinned*"
@@ -2338,13 +2338,13 @@ else
 return "پیام سنجاق شده پاک شد"
 end
 end
-if matches[1] == "add" then
+if matches[1] == "نصب" then
 return modadd(msg)
 end
-if matches[1] == "rem" then
+if matches[1] == "حذف" then
 return modrem(msg)
 end
-if matches[1] == "setowner" and is_admin(msg) then
+if matches[1] == "انتخاب مدیر" and is_admin(msg) then
 if not matches[2] and tonumber(msg.reply_to_message_id_) ~= 0 then
     tdcli_function ({
       ID = "GetMessage",
@@ -2365,7 +2365,7 @@ tdcli_function ({
     }, action_by_username, {chat_id=msg.chat_id_,username=matches[2],cmd="setowner"})
       end
    end
-if matches[1] == "remowner" and is_admin(msg) then
+if matches[1] == "حذف مدیر" and is_admin(msg) then
 if not matches[2] and tonumber(msg.reply_to_message_id_) ~= 0 then
     tdcli_function ({
       ID = "GetMessage",
@@ -2386,7 +2386,7 @@ tdcli_function ({
     }, action_by_username, {chat_id=msg.chat_id_,username=matches[2],cmd="remowner"})
       end
    end
-if matches[1] == "promote" and is_owner(msg) then
+if matches[1] == "انتخاب ناظر" and is_owner(msg) then
 if not matches[2] and tonumber(msg.reply_to_message_id_) ~= 0 then
     tdcli_function ({
       ID = "GetMessage",
@@ -2407,7 +2407,7 @@ tdcli_function ({
     }, action_by_username, {chat_id=msg.chat_id_,username=matches[2],cmd="promote"})
       end
    end
-if matches[1] == "demote" and is_owner(msg) then
+if matches[1] == "حذف ناظر" and is_owner(msg) then
 if not matches[2] and tonumber(msg.reply_to_message_id_) ~= 0 then
  tdcli_function ({
       ID = "GetMessage",
@@ -2429,177 +2429,177 @@ tdcli_function ({
       end
    end
 
-if matches[1] == "lock" and is_mod(msg) then
+if matches[1] == "قفل" and is_mod(msg) then
 local target = msg.chat_id_
-if matches[2] == "link" then
+if matches[2] == "لینک" then
 return lock_link(msg, data, target)
 end
-if matches[2] == "fosh" then
+if matches[2] == "فحش" then
 return lock_fosh(msg, data, target)
 end
-if matches[2] == "tag" then
+if matches[2] == "تگ" then
 return lock_tag(msg, data, target)
 end
-if matches[2] == "mention" then
+if matches[2] == "هایپرلینک" then
 return lock_mention(msg, data, target)
 end
-if matches[2] == "arabic" then
+if matches[2] == "عربی" then
 return lock_arabic(msg, data, target)
 end
-if matches[2] == "edit" then
+if matches[2] == "ویرایش" then
 return lock_edit(msg, data, target)
 end
-if matches[2] == "spam" then
+if matches[2] == "اسپم" then
 return lock_spam(msg, data, target)
 end
-if matches[2] == "flood" then
+if matches[2] == "فلود" then
 return lock_flood(msg, data, target)
 end
-if matches[2] == "bots" then
+if matches[2] == "ربات" then
 return lock_bots(msg, data, target)
 end
-if matches[2] == "markdown" then
+if matches[2] == "فونت" then
 return lock_markdown(msg, data, target)
 end
-if matches[2] == "webpage" then
+if matches[2] == "وبسایت" then
 return lock_webpage(msg, data, target)
 end
 end
 
-if matches[1] == "unlock" and is_mod(msg) then
+if matches[1] == "باز کردن" and is_mod(msg) then
 local target = msg.chat_id_
-if matches[2] == "link" then
+if matches[2] == "لینک" then
 return unlock_link(msg, data, target)
 end
-if matches[2] == "fosh" then
+if matches[2] == "فحش" then
 return unlock_fosh(msg, data, target)
 end
-if matches[2] == "tag" then
+if matches[2] == "تگ" then
 return unlock_tag(msg, data, target)
 end
-if matches[2] == "mention" then
+if matches[2] == "هایپرلینک" then
 return unlock_mention(msg, data, target)
 end
-if matches[2] == "arabic" then
+if matches[2] == "عربی" then
 return unlock_arabic(msg, data, target)
 end
-if matches[2] == "edit" then
+if matches[2] == "ویرایش" then
 return unlock_edit(msg, data, target)
 end
-if matches[2] == "spam" then
+if matches[2] == "اسپم" then
 return unlock_spam(msg, data, target)
 end
-if matches[2] == "flood" then
+if matches[2] == "فلود" then
 return unlock_flood(msg, data, target)
 end
-if matches[2] == "bots" then
+if matches[2] == "ربات" then
 return unlock_bots(msg, data, target)
 end
-if matches[2] == "markdown" then
+if matches[2] == "فونت" then
 return unlock_markdown(msg, data, target)
 end
-if matches[2] == "webpage" then
+if matches[2] == "وبسایت" then
 return unlock_webpage(msg, data, target)
 end
 end
-if matches[1] == "mute" and is_mod(msg) then
+if matches[1] == "ممنوعیت" and is_mod(msg) then
 local target = msg.chat_id_
-if matches[2] == "all" then
+if matches[2] == "همه چیز" then
 return mute_all(msg, data, target)
 end
-if matches[2] == "gif" then
+if matches[2] == "گیف" then
 return mute_gif(msg, data, target)
 end
-if matches[2] == "text" then
+if matches[2] == "متن" then
 return mute_text(msg ,data, target)
 end
-if matches[2] == "photo" then
+if matches[2] == "عکس" then
 return mute_photo(msg ,data, target)
 end
-if matches[2] == "video" then
+if matches[2] == "فیلم" then
 return mute_video(msg ,data, target)
 end
-if matches[2] == "audio" then
+if matches[2] == "موزیک" then
 return mute_audio(msg ,data, target)
 end
-if matches[2] == "voice" then
+if matches[2] == "صدا" then
 return mute_voice(msg ,data, target)
 end
-if matches[2] == "sticker" then
+if matches[2] == "استیکر" then
 return mute_sticker(msg ,data, target)
 end
-if matches[2] == "contact" then
+if matches[2] == "اطلاعات تماس" then
 return mute_contact(msg ,data, target)
 end
-if matches[2] == "forward" then
+if matches[2] == "فوروارد" then
 return mute_forward(msg ,data, target)
 end
-if matches[2] == "location" then
+if matches[2] == "مکان" then
 return mute_location(msg ,data, target)
 end
-if matches[2] == "document" then
+if matches[2] == "فایل" then
 return mute_document(msg ,data, target)
 end
-if matches[2] == "tgservice" then
+if matches[2] == "اعلانات" then
 return mute_tgservice(msg ,data, target)
 end
-if matches[2] == "inline" then
+if matches[2] == "اینلاین" then
 return mute_inline(msg ,data, target)
 end
-if matches[2] == "game" then
+if matches[2] == "بازی" then
 return mute_game(msg ,data, target)
 end
 end
 
-if matches[1] == "unmute" and is_mod(msg) then
+if matches[1] == "رفع ممنوعیت" and is_mod(msg) then
 local target = msg.chat_id_
-if matches[2] == "all" then
+if matches[2] == "همه چیز" then
 return unmute_all(msg, data, target)
 end
-if matches[2] == "gif" then
+if matches[2] == "گیف" then
 return unmute_gif(msg, data, target)
 end
-if matches[2] == "text" then
+if matches[2] == "متن" then
 return unmute_text(msg, data, target)
 end
-if matches[2] == "photo" then
+if matches[2] == "عکس" then
 return unmute_photo(msg ,data, target)
 end
-if matches[2] == "video" then
+if matches[2] == "فیلم" then
 return unmute_video(msg ,data, target)
 end
-if matches[2] == "audio" then
+if matches[2] == "موزیک" then
 return unmute_audio(msg ,data, target)
 end
-if matches[2] == "voice" then
+if matches[2] == "صدا" then
 return unmute_voice(msg ,data, target)
 end
-if matches[2] == "sticker" then
+if matches[2] == "استیکر" then
 return unmute_sticker(msg ,data, target)
 end
-if matches[2] == "contact" then
+if matches[2] == "مخاطب" then
 return unmute_contact(msg ,data, target)
 end
-if matches[2] == "forward" then
+if matches[2] == "فوروارد" then
 return unmute_forward(msg ,data, target)
 end
-if matches[2] == "location" then
+if matches[2] == "مکان" then
 return unmute_location(msg ,data, target)
 end
-if matches[2] == "document" then
+if matches[2] == "فایل" then
 return unmute_document(msg ,data, target)
 end
-if matches[2] == "tgservice" then
+if matches[2] == "اعلانات" then
 return unmute_tgservice(msg ,data, target)
 end
-if matches[2] == "inline" then
+if matches[2] == "اینلاین" then
 return unmute_inline(msg ,data, target)
 end
-if matches[2] == "game" then
+if matches[2] == "بازی" then
 return unmute_game(msg ,data, target)
 end
 end
-if matches[1] == "gpinfo" and is_mod(msg) and gp_type(msg.chat_id_) == "channel" then
+if matches[1] == "اطلاعات گروه" and is_mod(msg) and gp_type(msg.chat_id_) == "channel" then
 local function group_info(arg, data)
 local hash = "gp_lang:"..arg.chat_id
 local lang = redis:get(hash)
@@ -2614,7 +2614,7 @@ end
 end
  tdcli.getChannelFull(msg.chat_id_, group_info, {chat_id=msg.chat_id_,msg_id=msg.id_})
 end
-		if matches[1] == 'setlink' and is_owner(msg) then
+		if matches[1] == 'تنظیم لینک' and is_owner(msg) then
 			data[tostring(chat)]['settings']['linkgp'] = 'waiting'
 			save_data(_config.moderation.data, data)
       if not lang then
@@ -2636,7 +2636,7 @@ end
 		 	end
        end
 		end
-    if matches[1] == 'link' and is_mod(msg) then
+    if matches[1] == 'لینک' and is_mod(msg) then
       local linkgp = data[tostring(chat)]['settings']['linkgp']
       if not linkgp then
       if not lang then
@@ -2652,7 +2652,7 @@ end
          end
         return tdcli.sendMessage(chat, msg.id_, 1, text, 1, 'html')
      end
-  if matches[1] == "setrules" and matches[2] and is_mod(msg) then
+  if matches[1] == "تنظیم قوانین" and matches[2] and is_mod(msg) then
     data[tostring(chat)]['rules'] = matches[2]
 	  save_data(_config.moderation.data, data)
      if not lang then
@@ -2661,7 +2661,7 @@ end
   return "قوانین گروه ثبت شد"
    end
   end
-  if matches[1] == "rules" then
+  if matches[1] == "قوانین" then
  if not data[tostring(chat)]['rules'] then
    if not lang then
      rules = "ℹ️ The Default Rules :\n1⃣ No Flood.\n2⃣ No Spam.\n3⃣ No Advertising.\n4⃣ Try to stay on topic.\n5⃣ Forbidden any racist, sexual, homophobic or gore content.\n➡️ Repeated failure to comply with these rules will cause ban.\n"
@@ -2673,19 +2673,19 @@ end
       end
     return rules
   end
-if matches[1] == "res" and matches[2] and is_mod(msg) then
+if matches[1] == "رس" and matches[2] and is_mod(msg) then
     tdcli_function ({
       ID = "SearchPublicChat",
       username_ = matches[2]
     }, action_by_username, {chat_id=msg.chat_id_,username=matches[2],cmd="res"})
   end
-if matches[1] == "whois" and matches[2] and is_mod(msg) then
+if matches[1] == "چه کسی" and matches[2] and is_mod(msg) then
 tdcli_function ({
     ID = "GetUser",
     user_id_ = matches[2],
   }, action_by_id, {chat_id=msg.chat_id_,user_id=matches[2],cmd="whois"})
   end
-  if matches[1] == 'setflood' and is_mod(msg) then
+  if matches[1] == 'تنظیم فلود' and is_mod(msg) then
 			if tonumber(matches[2]) < 1 or tonumber(matches[2]) > 50 then
 				return "_Wrong number, range is_ *[1-50]*"
       end
@@ -2694,7 +2694,7 @@ tdcli_function ({
 			save_data(_config.moderation.data, data)
     return "_Group_ *flood* _sensitivity has been set to :_ *[ "..matches[2].." ]*"
        end
-		if matches[1]:lower() == 'clean' and is_owner(msg) then
+		if matches[1]:lower() == 'پاک کردن' and is_owner(msg) then
 			if matches[2] == 'mods' then
 				if next(data[tostring(chat)]['mods']) == nil then
             if not lang then
@@ -2713,7 +2713,7 @@ tdcli_function ({
             return "تمام مدیران گروه تنزیل مقام شدند"
 			end
          end
-			if matches[2] == 'filterlist' then
+			if matches[2] == 'لیست فیلترها' then
 				if next(data[tostring(chat)]['filterlist']) == nil then
      if not lang then
 					return "*Filtered words list* _is empty_"
@@ -2731,7 +2731,7 @@ tdcli_function ({
 				return "_لیست کلمات فیلتر شده پاک شد_"
            end
 			end
-			if matches[2] == 'rules' then
+			if matches[2] == 'قوانین' then
 				if not data[tostring(chat)]['rules'] then
             if not lang then
 					return "_No_ *rules* _available_"
@@ -2747,7 +2747,7 @@ tdcli_function ({
             return "قوانین گروه پاک شد"
 			end
        end
-			if matches[2] == 'welcome' then
+			if matches[2] == 'ولکام' then
 				if not data[tostring(chat)]['setwelcome'] then
             if not lang then
 					return "*Welcome Message not set*"
@@ -2763,7 +2763,7 @@ tdcli_function ({
             return "پیام خوشآمد گویی پاک شد"
 			end
        end
-			if matches[2] == 'about' then
+			if matches[2] == 'درباره' then
         if gp_type(chat) == "chat" then
 				if not data[tostring(chat)]['about'] then
             if not lang then
@@ -2784,7 +2784,7 @@ tdcli_function ({
              end
 		   	end
         end
-		if matches[1]:lower() == 'clean' and is_admin(msg) then
+		if matches[1]:lower() == 'پاک کردن' and is_admin(msg) then
 			if matches[2] == 'owners' then
 				if next(data[tostring(chat)]['owners']) == nil then
              if not lang then
@@ -2804,11 +2804,11 @@ tdcli_function ({
           end
 			end
      end
-if matches[1] == "setname" and matches[2] and is_mod(msg) then
+if matches[1] == "تنظیم نام" and matches[2] and is_mod(msg) then
 local gp_name = matches[2]
 tdcli.changeChatTitle(chat, gp_name, dl_cb, nil)
 end
-  if matches[1] == "setabout" and matches[2] and is_mod(msg) then
+  if matches[1] == "تنظیم درباره" and matches[2] and is_mod(msg) then
      if gp_type(chat) == "channel" then
    tdcli.changeChannelAbout(chat, matches[2], dl_cb, nil)
     elseif gp_type(chat) == "chat" then
@@ -2821,7 +2821,7 @@ end
      return "پیام مبنی بر درباره گروه ثبت شد"
       end
   end
-  if matches[1] == "about" and gp_type(chat) == "chat" then
+  if matches[1] == "درباره" and gp_type(chat) == "chat" then
  if not data[tostring(chat)]['about'] then
      if not lang then
      about = "_No_ *description* _available_"
@@ -2833,25 +2833,25 @@ end
       end
     return about
   end
-  if matches[1] == 'filter' and is_mod(msg) then
+  if matches[1] == 'فیلتر' and is_mod(msg) then
     return filter_word(msg, matches[2])
   end
-  if matches[1] == 'unfilter' and is_mod(msg) then
+  if matches[1] == 'رفع فیلتر' and is_mod(msg) then
     return unfilter_word(msg, matches[2])
   end
-  if matches[1] == 'filterlist' and is_mod(msg) then
+  if matches[1] == 'لیست فیلتر' and is_mod(msg) then
     return filter_list(msg)
   end
-if matches[1] == "settings" then
+if matches[1] == "تنظیمات" then
 return group_settings(msg, target)
 end
-if matches[1] == "mutelist" then
+if matches[1] == "لیست ممنوعیت" then
 return mutes(msg, target)
 end
-if matches[1] == "modlist" then
+if matches[1] == "لیست ناظران" then
 return modlist(msg)
 end
-if matches[1] == "ownerlist" and is_owner(msg) then
+if matches[1] == "لیست مدیران" and is_owner(msg) then
 return ownerlist(msg)
 end
 
@@ -2870,7 +2870,7 @@ end
 
 
 
-if matches[1] == "help" and is_mod(msg) then
+if matches[1] == "راهنما" and is_mod(msg) then
 if not lang then
 text = [[
 🔰*Bot Commands:*🔰
@@ -2998,6 +2998,7 @@ _Send Msg To All Groups_
 _set Auto leave_
 
 _You Can Use_ *[!/#]* _To Run The Commands_
+_Change the language to farsi : !setlang fa_
 ]]
 
 elseif lang then
@@ -3005,17 +3006,16 @@ text = [[
 
 ⚔ برای دیدن دستورات مورد نظر خود مورد دلخواه را ارسال کنید ⚔
 
-💀دستورات مدیریتی ربات های king & queen 💀
+💀دستورات مدیریتی ربات های king & queen 💀 
 درود بر گلادیاتور @Erfan_herkuless_051
 
 ☑️ برای مشاهده دستورات مدیریتی دستور زیر را ارسال کنید
-#مدیریت
+مدیریت
 
 ☑️برای مشاهده دستورات قفلی دستور زیر را ارسال کنید
-#قفل
-
+قفل ها
 ☑️برای مشاهده دستورات ممنوعیت دستور زیر را ارسال کنید
-#ممنوع
+ممنوع
 
 ☑️آگاهی از آنلاین بودن ربات
 ping
@@ -3029,7 +3029,7 @@ end
 return text
 end
 
-if matches[1] == "قفل" and is_mod(msg) then
+if matches[1] == "قفل ها" and is_mod(msg) then
 text2 = [[
 
 🔐 لیست قفل ها 🔐
@@ -3037,49 +3037,50 @@ text2 = [[
 .king & queen
 
 💬 قفل کردن لینک گروه ها
-🔒*!lock link*
-🔓*!unlock link*
+🔒*قفل لینک*
+🔓*باز کردن لینک*
 〰〰〰〰〰
 💬 قفل کردن یوزرنیم
-🔒*!lock tag*
-🔓*!unlock tag*
+🔒*قفل تگ*
+🔓*باز کردن تگ*
 〰〰〰〰〰
 💬 قفل کردن متن فارسی و عربی
-🔒*!lock arabic*
-🔓*!unlock arabic*
+🔒*قفل عربی*
+🔓*باز کردن عربی*
 〰〰〰〰〰
 💬 قفل کردن لینک سایت ها
-🔒*!lock webpage*
-🔓*!unlock webpage*
+🔒*قفل وبسایت*
+🔓*باز کردن وبسایت*
 〰〰〰〰〰
 💬 جلوگیری از ویرایش متن
-🔒*!lock edit*
-🔓*!unlock edit*
+🔒*قفل ویرایش*
+🔓*باز کردن ویرایش*
 〰〰〰〰〰
 💬 جلوگیری از وارد کردن ربات
-🔒*!lock bots*
-🔓*!unlock bots*
+🔒*قفل ربات*
+🔓*باز کردن ربات*
 〰〰〰〰〰
 💬 قفل پیام های طولانی
-🔒*!lock spam*
-🔓*!unlock spam*
+🔒*قفل اسپم*
+🔓*باز کردن اسپم*
 〰〰〰〰〰
 💬 قفل پیام های رگباری
-🔒*!lock flood*
-🔓*!unlock flood*
+🔒*قفل فلود*
+🔓*باز کردن فلود*
 〰〰〰〰〰
 💬 قفل بولد و ایتالیک متن
-🔒*!lock markdown*
-🔓*!unlock markdown*
+🔒*قفل فونت*
+🔓*باز کردن فونت*
 〰〰〰〰〰
 💬 قفل هایپرلینک
-🔒*!lock mention*
-🔓*!unlock mention*
+🔒*قفل هایپرلینک*
+🔓*باز کردن هایپرلینک*
 〰〰〰〰〰
 💬 قفل فحش
-🔒*!lock fosh*
-🔓*!unlock fosh*
+🔒*قفل فحش*
+🔓*باز کردن فحش*
 〰〰〰〰〰
+در زدن دستورات به فاصله حروف دقت کنید
 ...
 ]]
 return text2
@@ -3087,75 +3088,77 @@ end
 
 if matches[1] == "ممنوع" and is_mod(msg) then
 text3 = [[
-💀 لیست ممنوعیت ها 💀
+🔕 لیست ممنوعیت ها 🔕
+
 @Erfan_herkuless_051
 .king & queen
 
 💬 ارسال گیف ممنوع
-🔇*!mute gif*
-🔊*!unmute gif*
+🔇*ممنوعیت گیف*
+🔊*رفع ممنوعیت گیف*
 〰〰〰〰〰
 💬 ارسال عکس ممنوع
-🔇*!mute photo*
-🔊*!unmute photo*
+🔇*ممنوعیت عکس*
+🔊*رفع ممنوعیت عکس*
 〰〰〰〰〰
 💬 ارسال فایل ممنوع
-🔇*!mute document*
-🔊*!unmute document*
+🔇*ممنوعیت فایل*
+🔊*رفع ممنوعیت فایل*
 〰〰〰〰〰
 💬 ارسال استیکر ممنوع
-🔇*!mute sticker*
-🔊*!unmute sticker*
+🔇*ممنوعیت استیکر*
+🔊*رفع ممنوعیت استیکر*
 〰〰〰〰〰
 💬 ارسال ویدیو ممنوع
-🔇*!mute video*
-🔊*!unmute video*
+🔇*ممنوعیت فیلم*
+🔊*رفع ممنوعیت فیلم*
 〰〰〰〰〰
 💬 ارسال متن ممنوع
-🔇*!mute text*
-🔊*!unmute text*
+🔇*ممنوعیت متن*
+🔊*رفع ممنوعیت متن*
 〰〰〰〰〰
 💬 ارسال فوروارد ممنوع
-🔇*!mute forward*
-🔊*!unmute forward*
+🔇*ممنوعیت فوروارد*
+🔊*رفع ممنوعیت فوروارد*
 〰〰〰〰〰
 💬 ارسال بازی به گروه
-🔇*!mute game*
-🔊*!unmute game*
+🔇*ممنوعیت بازی*
+🔊*رفع ممنوعیت بازی*
 〰〰〰〰〰
 💬 ارسال مکان ممنوع
-🔇*!mute location*
-🔊*!unmute location*
+🔇*ممنوعیت مکان*
+🔊*رفع ممنوعیت مکان*
 〰〰〰〰〰
 💬 ارسال موزیک ممنوع
-🔇*!mute audio*
-🔊*!unmute audio*
+🔇*ممنوعیت موزیک*
+🔊*رفع ممنوعیت موزیک*
 〰〰〰〰〰
 💬 ارسال فایل ضبط شده ممنوع
-🔇*!mute voice*
-🔊*!unmute voice*
+🔇*ممنوعیت صدا*
+🔊*رفع ممنوعیت صدا*
 〰〰〰〰〰
 💬 ارسال اطلاعات تماس ممنوع
-🔇*!mute contact*
-🔊*!unmute contact*
+🔇*ممنوعیت اطلاعات تماس*
+🔊*رفع ممنوعیت اطلاعات تماس*
 〰〰〰〰〰
 💬 اعلانات گروه ممنوع
-🔇*!mute tgservices*
-🔊*!unmute tgservices*
+🔇*ممنوعیت اعلانات*
+🔊*رفع ممنوعیت اعلانات*
 〰〰〰〰〰
 💬 ارسال تبلیغات شیشه ای ممنوع
-🔇*!mute inline*
-🔊*!unmute inline *
+🔇*ممنوعیت اینلاین*
+🔊*رفع ممنوعیت اینلاین*
 〰〰〰〰〰
 💬 همه چیز ممنوع
-🔇*!mute all*
-🔊*!unmute all*
+🔇*ممنوعیت همه چیز*
+🔊*رفع ممنوعیت همه چیز*
 〰〰〰〰〰
 💬 میوت تایم دار
 عدد اول ساعت عدد دوم دقیقه
 🔇*!mt 0 1*
 🔊*!unmt*
 〰〰〰〰〰
+در زدن دستورات به فاصله حروف دقت کنید
 ...
 ]]
 return text3
@@ -3170,81 +3173,83 @@ text4 = [[
 @Erfan_herkuless_051
 .king & queen
 〰〰〰〰〰
-🔰 *!settings*
+🔰 *تنظیمات*
 💬 نمایش تنظیمات گروه
 〰〰〰〰〰
-🔕 *!silentlist*
+🔕 *لیست سایلنت*
 💬 نمایش لیست سایلنت شده ها
 〰〰〰〰〰
-🔕 *!banlist*
+🔕 *لیست مسدود*
 💬 نمایش لیست مسدود شده ها
 〰〰〰〰〰
-👑 *!ownerlist*
+👑 *لیست مدیران*
 💬 نمایش لیست مدیران
 〰〰〰〰〰
-🤖 *!modlist*
+🤖 *لیست ناظران*
 💬 نمایش لیست ناظران
 〰〰〰〰〰
-🎖 *!gpinfo*
+🎖 *اطلاعات گروه*
 💬 نمایش اطلاعات گروه
 〰〰〰〰〰
-👑 *!setowner* `[username|id|reply]` 
+👑 *انتخاب مدیر* `[username|id|reply]` 
 💬 تعیین مدیر اصلی گروه
 〰〰〰〰〰
-👑 *!remowner* `[username|id|reply]` 
+👑 *حذف مدیر* `[username|id|reply]` 
 💬 حذف مدیر اصلی 
 〰〰〰〰〰
-🤖 *!promote* `[username|id|reply]`
+🤖 *انتخاب ناظر* `[username|id|reply]`
 💬 تعیین ناظر گروه
 〰〰〰〰〰
-🤖 *!demote* `[username|id|reply]` 
+🤖 *حذف ناظر* `[username|id|reply]` 
 💬 حذف ناظر گروه
 〰〰〰〰〰
-🗣 *!setflood* `[1-50]`
+🗣 *تنظیم فلود* `[1-50]`
 💬 تعیین میزان مجاز پست های رگباری
 〰〰〰〰〰
-🔹 *!res* `[username]`
-🔹 *!id* `[reply]`
+🔹 *رس* `[username]`
+🔹 *ایدی* `[reply]`
 💬 نمایش آیدی یوزر 
 〰〰〰〰〰
-🔹 *!whois* `[id]`
+🔹 *چه کسی* `[id]`
 💬 نمایش یوزر آیدی
 〰〰〰〰〰
-🔕 *!silent* `[username|id|reply]`
-🔔 *!unsilent* `[username|id|reply]`
+🔕 *سایلنت* `[username|id|reply]`
+🔔 *رفع سایلنت* `[username|id|reply]`
 💬  ساکت کردن یک کاربر
 〰〰〰〰〰
-👊 *!kick* `[username|id|reply]`
+👊 *اخراج* `[username|id|reply]`
 💬 اخراج کردن یک کاربر
 〰〰〰〰〰
-👊 *!ban* `[username|id|reply]`
-✋ *!unban* `[username|id|reply]`
+👊 *مسدود کردن* `[username|id|reply]`
+✋ *رفع مسدودیت* `[username|id|reply]`
 💬  مسدود کردن یک کاربر
 〰〰〰〰〰
-✍ *!setlink*
-🔹 *!link* نمایش لینک
-✍ *!setrules* قوانین را بنویسید
-🔹 *!rules* نمایش قوانین
+✍ *!تنظیم لینک*
+🔹 *لینک* نمایش لینک
+✍ *تنظیم قوانین* قوانین را بنویسید
+🔹 *قوانین* نمایش قوانین
 💬  ثبت لینک و قوانین و نمایش آنها
 〰〰〰〰〰
-🚿 *!clean bans*
-💬  پاک کردن لیست مسدود شده ها
-〰〰〰〰〰
-🚿 *!clean rules*
+🚿 *!پاک کردن قوانین*
 💬  پاک کردن قوانین گروه
 〰〰〰〰〰
-🚿 *!clean silentlist*
+🚿 *پاک کردن لیست سایلنت*
 💬  پاک کردن لیست سایلنت شده ها
 〰〰〰〰〰
-📍 *!pin* `[reply]`
-📍 *!unpin* 
+📍 *سنجاق کردن* `[reply]`
+📍 *حذف سنجاق* 
 💬 سنجاق کردن متن در گروه
 〰〰〰〰〰
-🚫 *!filter* 
-🚫 *!unfilter* 
+🚫 *فیلتر* 
+🚫 *رفع فیلتر* 
 💬 فیلتر کلمات
-🚫 *!filterlist* 
+🚫 *لیست فیلتر* 
 💬 نمایش لیست فیلتر
+〰〰〰〰〰
+🎗*تنظیم ولکام* متن پیام
+➕*ولکام نصب*
+➖*ولکام حذف*
+💬 ست کردن و فعال و غیرفعال کردن خوش آمد گویی
 〰〰〰〰〰
 ♻️ *!del* 1-100
 ♻️ *!delall* `[reply]`
@@ -3254,11 +3259,6 @@ text4 = [[
 ⏱ *!expire*
 💬 تنظیم انقضای گروه
 〰〰〰〰〰
-🎗*!setwelcome* متن پیام
-➕*!welcome enable*
-➖*!welcome disable*
-💬 ست کردن و فعال و غیرفعال کردن خوش آمد گویی
-〰〰〰〰〰
 📣 *!broadcast* متن پیام
 💬 ارسال یک پیام به همه گروهایی که ربات مدیر است
 〰〰〰〰〰
@@ -3266,6 +3266,7 @@ text4 = [[
 ⚙*!autoleave disable*
 💬 تنظیم خارج شدن ربات
 ...
+در زدن دستورات به فاصله حروف دقت کنید
 ]]
 return text4
 end
@@ -3279,8 +3280,8 @@ end
 
 
 --------------------- Welcome -----------------------
-	if matches[1] == "welcome" and is_mod(msg) then
-		if matches[2] == "enable" then
+	if matches[1] == "ولکام" and is_mod(msg) then
+		if matches[2] == "نصب" then
 			welcome = data[tostring(chat)]['settings']['welcome']
 			if welcome == "yes" then
        if not lang then
@@ -3299,7 +3300,7 @@ end
 			end
 		end
 		
-		if matches[2] == "disable" then
+		if matches[2] == "حذف" then
 			welcome = data[tostring(chat)]['settings']['welcome']
 			if welcome == "no" then
       if not lang then
@@ -3318,7 +3319,7 @@ end
 			end
 		end
 	end
-	if matches[1] == "setwelcome" and matches[2] and is_mod(msg) then
+	if matches[1] == "تنظیم ولکام" and matches[2] and is_mod(msg) then
 		data[tostring(chat)]['setwelcome'] = matches[2]
 	    save_data(_config.moderation.data, data)
        if not lang then
@@ -3392,54 +3393,55 @@ end
  end
 return {
 patterns ={
-"^[!/#](مدیریت)$",
+"^(مدیریت)$",
 "^([Pp]ing)$",
-"^[!/#](ممنوع)$",
-"^[!/#](قفل)$",
-"^[!/#](id)$",
-"^[!/#](id) (.*)$",
-"^[!/#](pin)$",
-"^[!/#](unpin)$",
-"^[!/#](gpinfo)$",
-"^[!/#](test)$",
-"^[!/#](add)$",
-"^[!/#](rem)$",
-"^[!/#](setowner)$",
-"^[!/#](setowner) (.*)$",
-"^[!/#](remowner)$",
-"^[!/#](remowner) (.*)$",
-"^[!/#](promote)$",
-"^[!/#](promote) (.*)$",
-"^[!/#](demote)$",
-"^[!/#](demote) (.*)$",
-"^[!/#](modlist)$",
-"^[!/#](ownerlist)$",
-"^[!/#](lock) (.*)$",
-"^[!/#](unlock) (.*)$",
-"^[!/#](settings)$",
-"^[!/#](mutelist)$",
-"^[!/#](mute) (.*)$",
-"^[!/#](unmute) (.*)$",
-"^[!/#](link)$",
-"^[!/#](setlink)$",
-"^[!/#](rules)$",
-"^[!/#](setrules) (.*)$",
-"^[!/#](about)$",
-"^[!/#](setabout) (.*)$",
-"^[!/#](setname) (.*)$",
-"^[!/#](clean) (.*)$",
-"^[!/#](setflood) (%d+)$",
-"^[!/#](res) (.*)$",
-"^[!/#](whois) (%d+)$",
-"^[!/#](help)$",
-"^[!/#](setlang) (.*)$",
-"^[#!/](filter) (.*)$",
-"^[#!/](unfilter) (.*)$",
-"^[#!/](filterlist)$",
+"^(ممنوع)$",
+"^(قفل ها)$",
+"^(ایدی)$",
+"^(ایدی) (.*)$",
+"^(سنجاق کردن)$",
+"^(حذف سنجاق)$",
+"^(اطلاعات گروه)$",
+"^(تست)$",
+"^(نصب)$",
+"^(حذف)$",
+"^(انتخاب مدیر)$",
+"^(انتخاب مدیر) (.*)$",
+"^(حذف مدیر)$",
+"^(حذف مدیر) (.*)$",
+"^(انتخاب ناظر)$",
+"^(انتخاب ناظر) (.*)$",
+"^(حذف ناظر)$",
+"^(حذف ناظر) (.*)$",
+"^(لیست ناظران)$",
+"^(لیست مدیران)$",
+"^(قفل) (.*)$",
+"^(باز کردن) (.*)$",
+"^(تنظیمات)$",
+"^(لیست ممنوعیت)$",
+"^(ممنوعیت) (.*)$",
+"^(رفع ممنوعیت) (.*)$",
+"^(لینک)$",
+"^(تنظیم لینک)$",
+"^(قوانین)$",
+"^(تنظیم قوانین) (.*)$",
+"^(درباره)$",
+"^(تنظیم درباره) (.*)$",
+"^(تنظیم نام) (.*)$",
+"^(پاک کردن) (.*)$",
+"^(تنظیم فلود) (%d+)$",
+"^(رس) (.*)$",
+"^(چه کسی) (%d+)$",
+"^(راهنما)$",
+"^(setlang) (.*)$",
+"^(فیلتر) (.*)$",
+"^(رفع فیلتر) (.*)$",
+"^(لیست فیلتر)$",
 "^([https?://w]*.?t.me/joinchat/%S+)$",
 "^([https?://w]*.?telegram.me/joinchat/%S+)$",
-"^[!/#](setwelcome) (.*)",
-"^[!/#](welcome) (.*)$"
+"^(تنظیم ولکام) (.*)",
+"^(ولکام) (.*)$"
+
 
 },
 run=run,
