@@ -78,7 +78,9 @@ function create_config( )
   config = {
     enabled_plugins = {
     "banhammer",
+	"banhammer-fa",
     "groupmanager",
+	"groupmanager-fa",
     "msg-checks",
     "plugins",
     "tools",
@@ -86,6 +88,7 @@ function create_config( )
     "mute-time",
     "del",
 	"lock-fosh"
+	
  },
     sudo_users = {123456789},
     admins = {},
@@ -891,7 +894,6 @@ elseif msg.content_.ID == "MessageGame" then
   end
 
 end
--- کد های پایین در ربات نشان داده نمیشوند
 -- http://permag.ir
 -- @permag_ir
 -- @permag_bots
