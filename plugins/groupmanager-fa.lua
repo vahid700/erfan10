@@ -11,9 +11,9 @@ end
     local data = load_data(_config.moderation.data)
   if data[tostring(msg.chat_id_)] then
 if not lang then
-   return '_Group is already added_'
+   return '_💀 Im G O D  of war and ready my owner gladiator @Erfan_herkuless_051 💀_'
 else
-return 'گروه در لیست گروه های مدیریتی ربات هم اکنون موجود است'
+return '⚔ آماده پشتیبانی از مردم این قلمرو هستم ⚔'
   end
 end
         -- create data array in moderation.json
@@ -59,7 +59,7 @@ end
       data[tostring(groups)][tostring(msg.chat_id_)] = msg.chat_id_
       save_data(_config.moderation.data, data)
     if not lang then
-  return '*Group has been added*'
+  return '*⚔ آماده پشتیبانی از مردم این قلمرو هستم ⚔*'
 else
   return '💀 Im G O D  of war and ready my owner gladiator @Erfan_herkuless_051 💀'
 end
@@ -71,7 +71,7 @@ local lang = redis:get(hash)
     -- superuser and admins only (because sudo are always has privilege)
       if not is_admin(msg) then
      if not lang then
-        return '⚔ آماده پشتیبانی از مردم این قلمرو هستم ⚔'
+        return '_You are not bot admin_'
    else
         return 'شما مدیر ربات نمیباشید'
     end
