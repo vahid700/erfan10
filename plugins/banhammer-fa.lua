@@ -489,7 +489,7 @@ local lang = redis:get(hash)
 local data = load_data(_config.moderation.data)
 chat = msg.chat_id_
 user = msg.sender_user_id_
- if matches[1] == "اخراج" and is_mod(msg) then
+ if matches[1] == "زندانی" and is_mod(msg) then
 if not matches[2] and tonumber(msg.reply_to_message_id_) ~= 0 then
     tdcli_function ({
       ID = "GetMessage",
@@ -686,7 +686,7 @@ return tdcli.sendMessage(msg.chat_id_, msg.id_, 0, "*کاربر "..matches[2].."
     }, action_by_username, {chat_id=msg.chat_id_,username=matches[2],cmd="unban"})
       end
    end
- if matches[1] == "سایلنت" and is_mod(msg) then
+ if matches[1] == "ساکت" and is_mod(msg) then
 if not matches[2] and tonumber(msg.reply_to_message_id_) ~= 0 then
     tdcli_function ({
       ID = "GetMessage",
@@ -724,7 +724,7 @@ data[tostring(chat)]['is_silent_users'][tostring(matches[2])] = ""
     }, action_by_username, {chat_id=msg.chat_id_,username=matches[2],cmd="silent"})
       end
    end
- if matches[1] == "رفع سایلنت" and is_mod(msg) then
+ if matches[1] == "مصوت" and is_mod(msg) then
 if not matches[2] and tonumber(msg.reply_to_message_id_) ~= 0 then
     tdcli_function ({
       ID = "GetMessage",
@@ -774,12 +774,12 @@ data[tostring(chat)]['is_silent_users'][tostring(matches[2])] = nil
 				return "*تمام کاربران محروم شده از گروه از محرومیت خارج شدند*"
            end
 			end
-			if matches[2] == 'لیست سایلنت' then
+			if matches[2] == 'لیست ساکت' then
 				if next(data[tostring(chat)]['is_silent_users']) == nil then
         if not lang then
 					return "_No_ *silent* _users in this group_"
    else
-					return "*لیست کاربران سایلنت شده خالی است*"
+					return "* در این قلمرو لیست کاربران ساکت شده خالی است*"
              end
 				end
 				for k,v in pairs(data[tostring(chat)]['is_silent_users']) do
@@ -789,7 +789,7 @@ data[tostring(chat)]['is_silent_users'][tostring(matches[2])] = nil
        if not lang then
 				return "*Silent list* _has been cleaned_"
    else
-				return "*لیست کاربران سایلنت شده پاک شد*"
+				return "*لیست کاربران ساکت شده پاک شد*"
                end
 			    end
         end
@@ -816,7 +816,7 @@ data[tostring(chat)]['is_silent_users'][tostring(matches[2])] = nil
 if matches[1] == "لیست مسدودین گروه ها" and is_admin(msg) then
   return gbanned_list(msg)
  end
-if matches[1] == "لیست سایلنت" and is_mod(msg) then
+if matches[1] == "نیست ساکت" and is_mod(msg) then
   return silent_users_list(chat)
  end
 if matches[1] == "لیست مسدود" and is_mod(msg) then
@@ -836,13 +836,13 @@ return {
 		"^(رفع مسدود)$",
 		"^(رفع مسدود) (.*)$",
 		"^(لیست مسدود)$",
-		"^(سایلنت)$",
-		"^(سایلنت) (.*)$",
-		"^(رفع سایلنت)$",
-		"^(رفع سایلنت) (.*)$",
-		"^(لیست سایلنت)$",
-		"^(اخراج)$",
-		"^(اخراج) (.*)$",
+		"^(ساکت)$",
+		"^(ساکت) (.*)$",
+		"^(مصوت)$",
+		"^(مصوت) (.*)$",
+		"^(لیست ساکت)$",
+		"^(زندانی)$",
+		"^(زندانی) (.*)$",
 		"^(پاک کردن همه)$",
 		"^(پاک کردن همه) (.*)$",
 		"^(پاک کردن) (.*)$",

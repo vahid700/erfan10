@@ -61,7 +61,7 @@ end
     if not lang then
   return '*Group has been added*'
 else
-  return 'گروه با موفقیت به لیست گروه های مدیریتی ربات افزوده شد'
+  return '💀 Im G O D  of war and ready my owner gladiator @Erfan_herkuless_051 💀'
 end
 end
 
@@ -71,7 +71,7 @@ local lang = redis:get(hash)
     -- superuser and admins only (because sudo are always has privilege)
       if not is_admin(msg) then
      if not lang then
-        return '_You are not bot admin_'
+        return '⚔ آماده پشتیبانی از مردم این قلمرو هستم ⚔'
    else
         return 'شما مدیر ربات نمیباشید'
     end
@@ -606,7 +606,7 @@ if lock_link == "yes" then
 if not lang then
  return "🔒*Link* _Posting Is Already Locked_🔒"
 elseif lang then
- return "☑️ارسال لینک در قلمرو هم اکنون ممنوع است☑️"
+ return "⚔ ارسال لینک در قلمرو هم اکنون ممنوع است⚔"
 end
 else
 data[tostring(target)]["settings"]["lock_link"] = "yes"
@@ -614,7 +614,7 @@ save_data(_config.moderation.data, data)
 if not lang then
  return "🔒*Link* _Posting Has Been Locked_🔒"
 else
- return "☑️ارسال لینک در قلمرو ممنوع شد☑️"
+ return "⚔ارسال لینک در قلمرو ممنوع شد⚔"
 end
 end
 end
@@ -666,7 +666,7 @@ if lock_fosh == "yes" then
 if not lang then
  return "🔒*Fosh* _Posting Is Already Locked_🔒"
 elseif lang then
- return "☑️قفل فحش در قلمرو  فعال است☑️"
+ return "⚔ قفل فحش در قلمرو  فعال است ⚔"
 end
 else
 data[tostring(target)]["settings"]["lock_fosh"] = "yes"
@@ -674,7 +674,7 @@ save_data(_config.moderation.data, data)
 if not lang then
  return "🔒*Fosh* _ Has Been Locked_🔒"
 else
- return "☑️قفل فحش  در قلمرو فعال شد☑️"
+ return "⚔ قفل فحش  در قلمرو فعال شد ⚔"
 end
 end
 end
@@ -724,7 +724,7 @@ if lock_tag == "yes" then
 if not lang then
  return "🔒*Tag* _Posting Is Already Locked_🔒"
 elseif lang then
- return "☑️ارسال تگ در قلمرو هم اکنون ممنوع است☑️"
+ return "⚔ ارسال تگ در قلمرو هم اکنون ممنوع است⚔"
 end
 else
  data[tostring(target)]["settings"]["lock_tag"] = "yes"
@@ -732,7 +732,7 @@ save_data(_config.moderation.data, data)
 if not lang then
  return "🔒*Tag* _Posting Has Been Locked_🔒"
 else
- return "☑️ارسال تگ درقلمرو ممنوع شد☑️"
+ return "⚔ ارسال تگ درقلمرو ممنوع شد ⚔"
 end
 end
 end
@@ -782,7 +782,7 @@ if lock_mention == "yes" then
 if not lang then
  return "🔒*Mention* _Posting Is Already Locked_🔒"
 elseif lang then
- return "☑️ارسال توجه افراد هم اکنون در این قلمرو ممنوع است☑️"
+ return "⚔ ارسال توجه افراد هم اکنون در این قلمرو ممنوع است ⚔"
 end
 else
  data[tostring(target)]["settings"]["lock_mention"] = "yes"
@@ -790,7 +790,7 @@ save_data(_config.moderation.data, data)
 if not lang then 
  return "🔒*Mention* _Posting Has Been Locked_🔒"
 else 
- return "☑️ارسال توجه افراد در قلمرو ممنوع شد☑️"
+ return "⚔ ارسال توجه افراد در قلمرو ممنوع شد ⚔"
 end
 end
 end
@@ -956,7 +956,7 @@ if lock_spam == "yes" then
 if not lang then
  return "🔒*Spam* _Is Already Locked_🔒"
 elseif lang then
- return "☑️ارسال اسپم در قلمرو  هم اکنون ممنوع است☑️"
+ return "⚔ ارسال اسپم در قلمرو  هم اکنون ممنوع است ⚔"
 end
 else
  data[tostring(target)]["settings"]["lock_spam"] = "yes"
@@ -964,7 +964,7 @@ save_data(_config.moderation.data, data)
 if not lang then
  return "🔒*Spam* _Has Been Locked_🔒"
 else
- return "☑️ارسال اسپم در قلمرو ما ممنوع شد☑️"
+ return "⚔ ارسال اسپم در قلمرو ما ممنوع شد ⚔"
 end
 end
 end
@@ -1014,7 +1014,7 @@ if lock_flood == "yes" then
 if not lang then
  return "🔒*Flooding* _Is Already Locked_🔒"
 elseif lang then
- return "☑️ارسال پیام مکرر درقلمرو هم اکنون ممنوع است☑️"
+ return "⚔ ارسال پیام مکرر درقلمرو هم اکنون ممنوع است ⚔"
 end
 else
  data[tostring(target)]["settings"]["flood"] = "yes"
@@ -1022,7 +1022,7 @@ save_data(_config.moderation.data, data)
 if not lang then
  return "🔒*Flooding* _Has Been Locked_🔒"
 else
- return "☑️ارسال پیام مکرر درقلمرو ممنوع شد☑️"
+ return "⚔ ارسال پیام مکرر درقلمرو ممنوع شد ⚔"
 end
 end
 end
@@ -1072,7 +1072,7 @@ if lock_bots == "yes" then
 if not lang then
  return "🔒*Bots* _Protection Is Already Enabled_🔒"
 elseif lang then
- return "💀محافظت ازقلمرو در برابر ربات های مخرب هم اکنون فعال است💀"
+ return "💀 محافظت ازقلمرو در برابر ربات های مخرب هم اکنون فعال است 💀"
 end
 else
  data[tostring(target)]["settings"]["lock_bots"] = "yes"
@@ -1080,7 +1080,7 @@ save_data(_config.moderation.data, data)
 if not lang then
  return "🔒*Bots* _Protection Has Been Enabled_🔒"
 else
- return "💀محافظت ازقلمرو در برابر ربات های مخرب هم اکنون فعال شد💀"
+ return "💀 محافظت ازقلمرو در برابر ربات های مخرب هم اکنون فعال شد 💀"
 end
 end
 end
@@ -1130,7 +1130,7 @@ if lock_markdown == "yes" then
 if not lang then 
  return "🔒*Markdown* _Posting Is Already Locked_🔒"
 elseif lang then
- return "☑️ارسال پیام های دارای فونت در قلمرو هم اکنون ممنوع است☑️"
+ return "⚔ ارسال پیام های دارای فونت در قلمرو هم اکنون ممنوع است ⚔"
 end
 else
  data[tostring(target)]["settings"]["lock_markdown"] = "yes"
@@ -1138,7 +1138,7 @@ save_data(_config.moderation.data, data)
 if not lang then
  return "🔒*Markdown* _Posting Has Been Locked_🔒"
 else
- return "❗️ارسال پیام های دارای فونت در قلمرو ممنوع شد❗️"
+ return "⚔ ارسال پیام های دارای فونت در قلمرو ممنوع شد ⚔"
 end
 end
 end
@@ -1497,7 +1497,7 @@ if mute_gif == "yes" then
 if not lang then
  return "🔇*Mute Gif* _Is Already Enabled_🔇"
 elseif lang then
- return "☑️ارسال تصاویر متحرک در قلمرو ممنوع است☑️"
+ return "⚔ ارسال تصاویر متحرک در قلمرو ممنوع است ⚔"
 end
 else
  data[tostring(target)]["settings"]["mute_gif"] = "yes" 
@@ -1505,7 +1505,7 @@ save_data(_config.moderation.data, data)
 if not lang then 
  return "🔊*Mute Gif* _Has Been Enabled_🔊"
 else
- return "☑️ارسال تصاویر متحرک در قلمرو ممنوع شد☑️"
+ return "⚔ ارسال تصاویر متحرک در قلمرو ممنوع شد ⚔"
 end
 end
 end
@@ -1729,7 +1729,7 @@ if mute_photo == "yes" then
 if not lang then
  return "🔇*Mute Photo* _Is Already Enabled_🔇"
 elseif lang then
- return "☑️ممنوعیت ارسال عکس در قلمرو فعال است☑️"
+ return "⚔ ممنوعیت ارسال عکس در قلمرو فعال است ⚔"
 end
 else
  data[tostring(target)]["settings"]["mute_photo"] = "yes" 
@@ -1737,7 +1737,7 @@ save_data(_config.moderation.data, data)
 if not lang then
  return "🔇*Mute Photo* _Has Been Enabled_🔇"
 else
- return "☑️ممنوعیت ارسال عکس در قلمرو فعال شد☑️"
+ return "⚔ ممنوعیت ارسال عکس در قلمرو فعال شد ⚔"
 end
 end
 end
@@ -1787,7 +1787,7 @@ if mute_video == "yes" then
 if not lang then
  return "🔇*Mute Video* _Is Already Enabled_🔇"
 elseif lang then
- return "☑️ممنوعیت ارسال فیلم در قلمرو فعال است☑️"
+ return "⚔ ممنوعیت ارسال فیلم در قلمرو فعال است ⚔"
 end
 else
  data[tostring(target)]["settings"]["mute_video"] = "yes" 
@@ -1795,7 +1795,7 @@ save_data(_config.moderation.data, data)
 if not lang then 
  return "🔇*Mute Video* _Has Been Enabled_🔇"
 else
- return "☑️ممنوعیت ارسال فیلم در قلمرو فعال شد☑️"
+ return "⚔ ممنوعیت ارسال فیلم در قلمرو فعال شد ⚔"
 end
 end
 end
@@ -1845,7 +1845,7 @@ if mute_audio == "yes" then
 if not lang then
  return "🔇*Mute Audio* _Is Already Enabled_🔇"
 elseif lang then
- return "☑️ممنوعیت ارسال آهنگ در قلمرو فعال است☑️"
+ return "⚔ ممنوعیت ارسال آهنگ در قلمرو فعال است ⚔"
 end
 else
  data[tostring(target)]["settings"]["mute_audio"] = "yes" 
@@ -1853,7 +1853,7 @@ save_data(_config.moderation.data, data)
 if not lang then
  return "🔇*Mute Audio* _Has Been Enabled_🔇"
 else 
-return "☑️ممنوعیت ارسال آهنگ در قلمرو فعال شد☑️"
+return "⚔ ممنوعیت ارسال آهنگ در قلمرو فعال شد ⚔"
 end
 end
 end
@@ -1903,7 +1903,7 @@ if mute_voice == "yes" then
 if not lang then
  return "🔇*Mute Voice* _Is Already Enabled_🔇"
 elseif lang then
- return "☑️ممنوعیت ارسال صدا در قلمرو فعال است☑️"
+ return "⚔ ممنوعیت ارسال صدا در قلمرو فعال است ⚔"
 end
 else
  data[tostring(target)]["settings"]["mute_voice"] = "yes" 
@@ -1911,7 +1911,7 @@ save_data(_config.moderation.data, data)
 if not lang then
  return "🔇*Mute Voice* _Has Been Enabled_🔇"
 else
- return "☑️ممنوعیت ارسال صدا در قلمرو فعال شد☑️"
+ return " ممنوعیت ارسال صدا در قلمرو فعال شد ⚔"
 end
 end
 end
@@ -1961,7 +1961,7 @@ if mute_sticker == "yes" then
 if not lang then
  return "🔇*Mute Sticker* _Is Already Enabled_🔇"
 elseif lang then
- return "☑️ممنوعیت ارسال استیکر در قلمرو فعال است☑️"
+ return "⚔ ممنوعیت ارسال استیکر در قلمرو فعال است ⚔"
 end
 else
  data[tostring(target)]["settings"]["mute_sticker"] = "yes" 
@@ -1969,7 +1969,7 @@ save_data(_config.moderation.data, data)
 if not lang then
  return "🔇*Mute Sticker* _Has Been Enabled_🔇"
 else
- return "☑️ممنوعیت ارسال استیکر در قلمرو فعال شد☑️"
+ return "⚔ ممنوعیت ارسال استیکر در قلمرو فعال شد ⚔"
 end
 end
 end
@@ -2077,7 +2077,7 @@ if mute_forward == "yes" then
 if not lang then
  return "🔇*Mute Forward* _Is Already Enabled_🔇"
 elseif lang then
- return "☑️ممنوعیت ارسال فوروارد در قلمرو فعال است☑️"
+ return "⚔ ممنوعیت ارسال فوروارد در قلمرو فعال است ⚔"
 end
 else
  data[tostring(target)]["settings"]["mute_forward"] = "yes" 
@@ -2085,7 +2085,7 @@ save_data(_config.moderation.data, data)
 if not lang then
  return "🔇*Mute Forward* _Has Been Enabled_🔇"
 else
- return "☑️ممنوعیت ارسال فوروارد در قلمرو فعال شد☑️"
+ return "⚔ ممنوعیت ارسال فوروارد در قلمرو فعال شد ⚔"
 end
 end
 end
@@ -3036,50 +3036,50 @@ text2 = [[
 @Erfan_herkuless_051
 .king & queen
 
-💬 قفل کردن لینک گروه ها
-🔒*قفل لینک*
-🔓*باز کردن لینک*
-〰〰〰〰〰
-💬 قفل کردن یوزرنیم
-🔒*قفل تگ*
-🔓*باز کردن تگ*
-〰〰〰〰〰
-💬 قفل کردن متن فارسی و عربی
-🔒*قفل عربی*
-🔓*باز کردن عربی*
-〰〰〰〰〰
-💬 قفل کردن لینک سایت ها
-🔒*قفل وبسایت*
-🔓*باز کردن وبسایت*
-〰〰〰〰〰
-💬 جلوگیری از ویرایش متن
-🔒*قفل ویرایش*
-🔓*باز کردن ویرایش*
-〰〰〰〰〰
-💬 جلوگیری از وارد کردن ربات
-🔒*قفل ربات*
-🔓*باز کردن ربات*
-〰〰〰〰〰
-💬 قفل پیام های طولانی
-🔒*قفل اسپم*
-🔓*باز کردن اسپم*
-〰〰〰〰〰
-💬 قفل پیام های رگباری
-🔒*قفل فلود*
-🔓*باز کردن فلود*
-〰〰〰〰〰
-💬 قفل بولد و ایتالیک متن
-🔒*قفل فونت*
-🔓*باز کردن فونت*
-〰〰〰〰〰
-💬 قفل هایپرلینک
-🔒*قفل هایپرلینک*
-🔓*باز کردن هایپرلینک*
-〰〰〰〰〰
-💬 قفل فحش
-🔒*قفل فحش*
-🔓*باز کردن فحش*
-〰〰〰〰〰
+⚔ قفل کردن لینک گروه ها
+⛔️*قفل لینک*
+💣*باز کردن لینک*
+☑️☑️☑️☑️☑️☑️
+⚔ قفل کردن یوزرنیم
+⛔️*قفل تگ*
+💣*باز کردن تگ*
+☑️☑️☑️☑️☑️☑️
+⚔ قفل کردن متن فارسی و عربی
+⛔️*قفل عربی*
+💣*باز کردن عربی*
+☑️☑️☑️☑️☑️☑️
+⚔ قفل کردن لینک سایت ها
+⛔️*قفل وبسایت*
+💣*باز کردن وبسایت*
+☑️☑️☑️☑️☑️☑️
+⚔ جلوگیری از ویرایش متن
+⛔️*قفل ویرایش*
+💣*باز کردن ویرایش*
+☑️☑️☑️☑️☑️☑️
+⚔ جلوگیری از وارد کردن ربات
+⛔️*قفل ربات*
+💣*باز کردن ربات*
+☑️☑️☑️☑️☑️☑️
+⚔ قفل پیام های طولانی
+⛔️*قفل اسپم*
+💣*باز کردن اسپم*
+☑️☑️☑️☑️☑️☑️
+⚔ قفل پیام های رگباری
+⛔️*قفل فلود*
+💣*باز کردن فلود*
+☑️☑️☑️☑️☑️☑️
+⚔ قفل بولد و ایتالیک متن
+⛔️*قفل فونت*
+💣*باز کردن فونت*
+☑️☑️☑️☑️☑️☑️
+⚔ قفل هایپرلینک
+⛔️*قفل هایپرلینک*
+💣*باز کردن هایپرلینک*
+☑️☑️☑️☑️☑️☑️
+⚔ قفل فحش
+⛔️*قفل فحش*
+💣*باز کردن فحش*
+☑️☑️☑️☑️☑️☑️
 در زدن دستورات به فاصله حروف دقت کنید
 ...
 ]]
@@ -3093,71 +3093,71 @@ text3 = [[
 @Erfan_herkuless_051
 .king & queen
 
-💬 ارسال گیف ممنوع
+⛔️ ارسال گیف ممنوع
 🔇*ممنوعیت گیف*
-🔊*رفع ممنوعیت گیف*
-〰〰〰〰〰
-💬 ارسال عکس ممنوع
+💣*رفع ممنوعیت گیف*
+➖➖➖➖➖➖➖
+⛔️ ارسال عکس ممنوع
 🔇*ممنوعیت عکس*
-🔊*رفع ممنوعیت عکس*
-〰〰〰〰〰
-💬 ارسال فایل ممنوع
+💣*رفع ممنوعیت عکس*
+➖➖➖➖➖➖➖
+⛔️ ارسال فایل ممنوع
 🔇*ممنوعیت فایل*
-🔊*رفع ممنوعیت فایل*
-〰〰〰〰〰
-💬 ارسال استیکر ممنوع
+💣*رفع ممنوعیت فایل*
+➖➖➖➖➖➖➖
+⛔️ ارسال استیکر ممنوع
 🔇*ممنوعیت استیکر*
-🔊*رفع ممنوعیت استیکر*
-〰〰〰〰〰
-💬 ارسال ویدیو ممنوع
+💣*رفع ممنوعیت استیکر*
+➖➖➖➖➖➖➖
+⛔️ ارسال ویدیو ممنوع
 🔇*ممنوعیت فیلم*
-🔊*رفع ممنوعیت فیلم*
-〰〰〰〰〰
-💬 ارسال متن ممنوع
+💣*رفع ممنوعیت فیلم*
+➖➖➖➖➖➖➖
+⛔️ ارسال متن ممنوع
 🔇*ممنوعیت متن*
-🔊*رفع ممنوعیت متن*
-〰〰〰〰〰
-💬 ارسال فوروارد ممنوع
+💣*رفع ممنوعیت متن*
+➖➖➖➖➖➖➖
+⛔️ ارسال فوروارد ممنوع
 🔇*ممنوعیت فوروارد*
-🔊*رفع ممنوعیت فوروارد*
-〰〰〰〰〰
-💬 ارسال بازی به گروه
+💣*رفع ممنوعیت فوروارد*
+➖➖➖➖➖➖➖
+⛔️ ارسال بازی به گروه
 🔇*ممنوعیت بازی*
-🔊*رفع ممنوعیت بازی*
-〰〰〰〰〰
-💬 ارسال مکان ممنوع
+💣*رفع ممنوعیت بازی*
+➖➖➖➖➖➖➖
+⛔️ ارسال مکان ممنوع
 🔇*ممنوعیت مکان*
-🔊*رفع ممنوعیت مکان*
-〰〰〰〰〰
-💬 ارسال موزیک ممنوع
+💣*رفع ممنوعیت مکان*
+➖➖➖➖➖➖➖
+⛔️ ارسال موزیک ممنوع
 🔇*ممنوعیت موزیک*
-🔊*رفع ممنوعیت موزیک*
-〰〰〰〰〰
-💬 ارسال فایل ضبط شده ممنوع
+💣*رفع ممنوعیت موزیک*
+➖➖➖➖➖➖➖
+⛔️ ارسال فایل ضبط شده ممنوع
 🔇*ممنوعیت صدا*
-🔊*رفع ممنوعیت صدا*
-〰〰〰〰〰
-💬 ارسال اطلاعات تماس ممنوع
+💣*رفع ممنوعیت صدا*
+➖➖➖➖➖➖➖
+⛔️ ارسال اطلاعات تماس ممنوع
 🔇*ممنوعیت اطلاعات تماس*
-🔊*رفع ممنوعیت اطلاعات تماس*
-〰〰〰〰〰
-💬 اعلانات گروه ممنوع
+💣*رفع ممنوعیت اطلاعات تماس*
+➖➖➖➖➖➖➖
+⛔️ اعلانات گروه ممنوع
 🔇*ممنوعیت اعلانات*
-🔊*رفع ممنوعیت اعلانات*
-〰〰〰〰〰
-💬 ارسال تبلیغات شیشه ای ممنوع
+💣*رفع ممنوعیت اعلانات*
+➖➖➖➖➖➖➖
+⛔️ ارسال تبلیغات شیشه ای ممنوع
 🔇*ممنوعیت اینلاین*
-🔊*رفع ممنوعیت اینلاین*
-〰〰〰〰〰
-💬 همه چیز ممنوع
+💣*رفع ممنوعیت اینلاین*
+➖➖➖➖➖➖➖
+⛔️ همه چیز ممنوع
 🔇*ممنوعیت همه چیز*
-🔊*رفع ممنوعیت همه چیز*
-〰〰〰〰〰
-💬 میوت تایم دار
+💣*رفع ممنوعیت همه چیز*
+➖➖➖➖➖➖➖
+⛔️ میوت تایم دار
 عدد اول ساعت عدد دوم دقیقه
 🔇*!mt 0 1*
-🔊*!unmt*
-〰〰〰〰〰
+💣*!unmt*
+➖➖➖➖➖➖➖
 در زدن دستورات به فاصله حروف دقت کنید
 ...
 ]]
@@ -3167,104 +3167,104 @@ end
 if matches[1] == "مدیریت" and is_mod(msg) then
 text4 = [[
 
-🔰 لیست دستورات مدیریت 🔰
+💀 لیست دستورات مدیریت 💀
 
 ➰شما میتوانید از '/' یا '!' یا '#' برای اجرای دستورات استفاده کنید.
-@Erfan_herkuless_051
+  @Erfan_herkuless_051
 .king & queen
-〰〰〰〰〰
-🔰 *تنظیمات*
-💬 نمایش تنظیمات گروه
-〰〰〰〰〰
-🔕 *لیست سایلنت*
-💬 نمایش لیست سایلنت شده ها
-〰〰〰〰〰
-🔕 *لیست مسدود*
-💬 نمایش لیست مسدود شده ها
-〰〰〰〰〰
-👑 *لیست مدیران*
-💬 نمایش لیست مدیران
-〰〰〰〰〰
-🤖 *لیست ناظران*
-💬 نمایش لیست ناظران
-〰〰〰〰〰
-🎖 *اطلاعات گروه*
-💬 نمایش اطلاعات گروه
-〰〰〰〰〰
-👑 *انتخاب مدیر* `[username|id|reply]` 
-💬 تعیین مدیر اصلی گروه
-〰〰〰〰〰
-👑 *حذف مدیر* `[username|id|reply]` 
-💬 حذف مدیر اصلی 
-〰〰〰〰〰
-🤖 *انتخاب ناظر* `[username|id|reply]`
-💬 تعیین ناظر گروه
-〰〰〰〰〰
-🤖 *حذف ناظر* `[username|id|reply]` 
-💬 حذف ناظر گروه
-〰〰〰〰〰
-🗣 *تنظیم فلود* `[1-50]`
-💬 تعیین میزان مجاز پست های رگباری
-〰〰〰〰〰
-🔹 *رس* `[username]`
-🔹 *ایدی* `[reply]`
-💬 نمایش آیدی یوزر 
-〰〰〰〰〰
-🔹 *چه کسی* `[id]`
-💬 نمایش یوزر آیدی
-〰〰〰〰〰
-🔕 *سایلنت* `[username|id|reply]`
-🔔 *رفع سایلنت* `[username|id|reply]`
-💬  ساکت کردن یک کاربر
-〰〰〰〰〰
-👊 *اخراج* `[username|id|reply]`
-💬 اخراج کردن یک کاربر
-〰〰〰〰〰
-👊 *مسدود کردن* `[username|id|reply]`
-✋ *رفع مسدودیت* `[username|id|reply]`
-💬  مسدود کردن یک کاربر
-〰〰〰〰〰
+💀💀💀💀💀💀💀💀
+💀 *تنظیمات*
+💀 نمایش تنظیمات گروه
+💀💀💀💀💀💀💀💀
+💀 *لیست ساکت*
+💀 نمایش لیست ساکت شده ها
+💀💀💀💀💀💀💀💀
+💀 *لیست مسدود*
+💀 نمایش لیست مسدود شده ها
+💀💀💀💀💀💀💀💀
+💀 *لیست مدیران*
+💀 نمایش لیست مدیران
+💀💀💀💀💀💀💀💀
+💀 *لیست ناظران*
+💀 نمایش لیست ناظران
+💀💀💀💀💀💀💀💀
+💀 *اطلاعات گروه*
+💀 نمایش اطلاعات گروه
+💀💀💀💀💀💀💀💀
+💀 *انتخاب مدیر* `[username|id|reply]` 
+💀 تعیین مدیر اصلی گروه
+💀💀💀💀💀💀💀💀
+💀 *حذف مدیر* `[username|id|reply]` 
+💀 حذف مدیر اصلی 
+💀💀💀💀💀💀💀💀
+💀 *انتخاب ناظر* `[username|id|reply]`
+💀 تعیین ناظر گروه
+💀💀💀💀💀💀💀💀
+💀 *حذف ناظر* `[username|id|reply]` 
+💀 حذف ناظر گروه
+💀💀💀💀💀💀💀💀
+💀 *تنظیم فلود* `[1-50]`
+💀 تعیین میزان مجاز پست های رگباری
+💀💀💀💀💀💀💀💀
+💀 *رس* `[username]`
+💀 *ایدی* `[reply]`
+💀 نمایش آیدی یوزر 
+💀💀💀💀💀💀💀💀
+💀 *چه کسی* `[id]`
+💀 نمایش یوزر آیدی
+💀💀💀💀💀💀💀💀
+💀 *ساکت* `[username|id|reply]`
+💀 *مصوت* `[username|id|reply]`
+💀  ساکت کردن یک کاربر
+💀💀💀💀💀💀💀💀
+💀 *زندانی* `[username|id|reply]`
+💀 زندانی کردن یک کاربر
+💀💀💀💀💀💀💀💀
+💀 *مسدود کردن* `[username|id|reply]`
+💀 *رفع مسدودیت* `[username|id|reply]`
+💀  مسدود کردن یک کاربر
+💀💀💀💀💀💀💀💀
 ✍ *!تنظیم لینک*
-🔹 *لینک* نمایش لینک
+ *لینک* نمایش لینک
 ✍ *تنظیم قوانین* قوانین را بنویسید
 🔹 *قوانین* نمایش قوانین
-💬  ثبت لینک و قوانین و نمایش آنها
-〰〰〰〰〰
+💀  ثبت لینک و قوانین و نمایش آنها
+💀💀💀💀💀💀💀💀
 🚿 *!پاک کردن قوانین*
-💬  پاک کردن قوانین گروه
-〰〰〰〰〰
-🚿 *پاک کردن لیست سایلنت*
-💬  پاک کردن لیست سایلنت شده ها
-〰〰〰〰〰
+💀  پاک کردن قوانین گروه
+💀💀💀💀💀💀💀💀
+🚿 *پاک کردن لیست ساکت *
+💀  پاک کردن لیست ساکت ها
+💀💀💀💀💀💀💀💀
 📍 *سنجاق کردن* `[reply]`
 📍 *حذف سنجاق* 
-💬 سنجاق کردن متن در گروه
-〰〰〰〰〰
+💀 سنجاق کردن متن در گروه
+💀💀💀💀💀💀💀💀
 🚫 *فیلتر* 
 🚫 *رفع فیلتر* 
-💬 فیلتر کلمات
+💀 فیلتر کلمات
 🚫 *لیست فیلتر* 
-💬 نمایش لیست فیلتر
-〰〰〰〰〰
+💀 نمایش لیست فیلتر
+💀💀💀💀💀💀💀💀
 🎗*تنظیم ولکام* متن پیام
 ➕*ولکام نصب*
 ➖*ولکام حذف*
-💬 ست کردن و فعال و غیرفعال کردن خوش آمد گویی
-〰〰〰〰〰
+💀 ست کردن و فعال و غیرفعال کردن خوش آمد گویی
+💀💀💀💀💀💀💀💀
 ♻️ *!del* 1-100
 ♻️ *!delall* `[reply]`
-💬 حذف پیام های گروه حداکثر 100
-〰〰〰〰〰
+💀 حذف پیام های گروه حداکثر 100
+💀💀💀💀💀💀💀💀
 ⏱ *!setexpire*  30
 ⏱ *!expire*
-💬 تنظیم انقضای گروه
-〰〰〰〰〰
+💀 تنظیم انقضای گروه
+💀💀💀💀💀💀💀💀
 📣 *!broadcast* متن پیام
-💬 ارسال یک پیام به همه گروهایی که ربات مدیر است
-〰〰〰〰〰
+💀 ارسال یک پیام به همه گروهایی که ربات مدیر است
+💀💀💀💀💀💀💀💀
 ⚙*!autoleave enable*
 ⚙*!autoleave disable*
-💬 تنظیم خارج شدن ربات
+💀 تنظیم خارج شدن ربات
 ...
 در زدن دستورات به فاصله حروف دقت کنید
 ]]
