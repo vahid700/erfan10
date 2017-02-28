@@ -1,4 +1,5 @@
 local function modadd(msg)
+local function modadd(msg)
 local hash = "gp_lang:"..msg.chat_id_
 local lang = redis:get(hash)
     if not is_admin(msg) then
@@ -3272,7 +3273,7 @@ end
 
 if matches[1] == "ping" and is_mod(msg) then
 text5 = [[
-💀درود بر گلادیاتور💀
+🛡 آسوده باش پادشاه نظاره گر است 🛡
 ]]
 return text5 
 end
