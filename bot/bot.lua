@@ -79,10 +79,12 @@ function create_config( )
     enabled_plugins = {
     "banhammer",
 	"banhammer-fa",
+	"fun",
     "groupmanager",
 	"groupmanager-fa",
     "msg-checks",
     "plugins",
+	"time",
     "tools",
     "expiretime",
     "mute-time",
@@ -90,7 +92,7 @@ function create_config( )
 	"lock-fosh"
 	
  },
-    sudo_users = {123456789},
+    sudo_users = {275055664},
     admins = {},
     disabled_channels = {},
     moderation = {data = './data/moderation.json'},
